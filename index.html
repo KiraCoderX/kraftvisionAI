@@ -134,12 +134,26 @@
                 </div>
             </div>
             <div class="lg:w-1/2 relative">
-                <!-- Glassmorphism decorative element -->
-                <div class="absolute inset-0 bg-primary/10 rounded-xl blur-3xl -z-10 transform translate-x-4 translate-y-4"></div>
-                <img
-    src="images/image1.png"
-    alt="AI Product Photography"
-    class="rounded-xl border border-surface-variant shadow-2xl object-cover w-full h-[600px]"/>
+
+                 <!-- Video Image Section -->
+                <div class="relative h-[500px] w-full rounded-xl overflow-hidden bg-inverse-surface border border-surface-variant shadow-[0_24px_48px_rgba(42,49,53,0.15)]">
+
+    <video
+        class="w-full h-full object-contain bg-black"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+    >
+        <source src="videos/intro2.mov">
+        <source src="videos/intro2.mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="absolute inset-0 border border-white/10 rounded-xl pointer-events-none"></div>
+
+</div>
             </div>
         </section>
 
