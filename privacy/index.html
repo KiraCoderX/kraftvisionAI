@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>PRIVACY - KRAFT VISION</title>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="tailwind.config.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+
+    <!-- Unified Symmetrical Header -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/50 shadow-sm h-20">
+        <div class="flex items-center justify-between px-6 lg:px-12 max-w-7xl mx-auto h-full relative">
+            <!-- Left: Logo -->
+            <a href="../" class="shrink-0 relative z-50">
+                <img src="logo.jpg" alt="KRAFT VISION AI Logo" class="h-14 w-auto">
+            </a>
+            
+            <!-- Middle: Nav Links with Mega Menu -->
+            <div class="hidden md:flex items-center justify-center gap-8 absolute left-1/2 -translate-x-1/2">
+                <div class="relative group">
+                    <a class="font-['Space_Grotesk'] text-sm font-medium tracking-tight text-slate-600 hover:text-slate-900 transition-colors duration-200 ease-out active:scale-95 flex items-center gap-1 cursor-pointer" href="#">
+                        Product
+                        <span class="material-symbols-outlined text-[16px]">keyboard_arrow_down</span>
+                    </a>
+                    <!-- Mega Menu Dropdown -->
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <div class="w-72 bg-white border border-slate-200 rounded-xl shadow-xl py-2 overflow-hidden">
+                            <a class="px-4 py-3 hover:bg-slate-50 transition-colors text-slate-600 hover:text-primary flex items-center gap-3" href="#">
+                                <span class="material-symbols-outlined text-xl">wallpaper</span>
+                                <span class="font-medium text-sm">Background Remover</span>
+                            </a>
+                            <a class="px-4 py-3 hover:bg-slate-50 transition-colors text-slate-600 hover:text-primary flex items-center gap-3" href="#">
+                                <span class="material-symbols-outlined text-xl">auto_awesome</span>
+                                <span class="font-medium text-sm">Image Generator</span>
+                            </a>
+                            <a class="px-4 py-3 hover:bg-slate-50 transition-colors text-slate-600 hover:text-primary flex items-center gap-3" href="#">
+                                <span class="material-symbols-outlined text-xl">checkroom</span>
+                                <span class="font-medium text-sm">Clothes Swapping</span>
+                            </a>
+                            <a class="px-4 py-3 hover:bg-slate-50 transition-colors text-slate-600 hover:text-primary flex items-center gap-3" href="#">
+                                <span class="material-symbols-outlined text-xl">image</span>
+                                <span class="font-medium text-sm">Background Generator</span>
+                            </a>
+                            <a class="px-4 py-3 hover:bg-slate-50 transition-colors text-slate-600 hover:text-primary flex items-center gap-3" href="#">
+                                <span class="material-symbols-outlined text-xl">photo_camera</span>
+                                <span class="font-medium text-sm">AI Product Photography</span>
+                            </a>
+                            <a class="px-4 py-3 hover:bg-slate-50 transition-colors text-slate-600 hover:text-primary flex items-center gap-3" href="#">
+                                <span class="material-symbols-outlined text-xl">accessibility_new</span>
+                                <span class="font-medium text-sm">Ghost Mannequin</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a class="font-['Space_Grotesk'] text-sm font-medium tracking-tight text-slate-600 hover:text-slate-900 transition-colors duration-200 ease-out active:scale-95" href="../Solutions">Solutions</a>
+                <a class="font-['Space_Grotesk'] text-sm font-medium tracking-tight text-slate-600 hover:text-slate-900 transition-colors duration-200 ease-out active:scale-95" href="../why_us">Why Us</a>
+                <a class="font-['Space_Grotesk'] text-sm font-medium tracking-tight text-slate-600 hover:text-slate-900 transition-colors duration-200 ease-out active:scale-95" href="../Pricing">Pricing</a>
+            </div>
+
+            <!-- Right: CTA & Mobile Toggle -->
+            <div class="flex items-center gap-4 shrink-0 relative z-50">
+                <button class="hidden lg:block font-['Space_Grotesk'] text-sm font-medium text-slate-600 hover:text-slate-900 px-4 py-2">Log In</button>
+                <a href="../contact_us" class="hidden md:inline-block bg-primary text-on-primary px-6 py-2.5 rounded-lg font-['Space_Grotesk'] text-sm font-bold tracking-tight hover:bg-primary-container transition-all active:scale-95">Contact Us</a>
+                
+                <!-- Mobile Menu Toggle Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-slate-900 p-2 focus:outline-none flex flex-col gap-1.5 w-10 h-10 items-center justify-center rounded-lg hover:bg-slate-100 transition-colors">
+                    <span class="w-5 h-[2px] bg-slate-900 transition-all duration-300 origin-center" id="bar1"></span>
+                    <span class="w-5 h-[2px] bg-slate-900 transition-all duration-300 origin-center" id="bar2"></span>
+                    <span class="w-5 h-[2px] bg-slate-900 transition-all duration-300 origin-center" id="bar3"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Container -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white z-40 flex flex-col pt-24 px-6 pb-6 opacity-0 pointer-events-none transition-all duration-300 md:hidden scale-95 origin-top">
+            <div class="flex flex-col space-y-6 overflow-y-auto h-full">
+                <div class="border-b border-slate-100 pb-4">
+                    <span class="font-['Space_Grotesk'] text-sm font-bold text-slate-400 uppercase tracking-widest block mb-4">Product</span>
+                    <div class="flex flex-col space-y-4 pl-4 border-l-2 border-slate-100">
+                        <a href="#" class="text-slate-600 font-medium hover:text-primary transition-colors flex items-center gap-3"><span class="material-symbols-outlined text-lg">wallpaper</span> Background Remover</a>
+                        <a href="#" class="text-slate-600 font-medium hover:text-primary transition-colors flex items-center gap-3"><span class="material-symbols-outlined text-lg">auto_awesome</span> Image Generator</a>
+                        <a href="#" class="text-slate-600 font-medium hover:text-primary transition-colors flex items-center gap-3"><span class="material-symbols-outlined text-lg">checkroom</span> Clothes Swapping</a>
+                        <a href="#" class="text-slate-600 font-medium hover:text-primary transition-colors flex items-center gap-3"><span class="material-symbols-outlined text-lg">image</span> Background Generator</a>
+                        <a href="#" class="text-slate-600 font-medium hover:text-primary transition-colors flex items-center gap-3"><span class="material-symbols-outlined text-lg">photo_camera</span> AI Photography</a>
+                        <a href="#" class="text-slate-600 font-medium hover:text-primary transition-colors flex items-center gap-3"><span class="material-symbols-outlined text-lg">accessibility_new</span> Ghost Mannequin</a>
+                    </div>
+                </div>
+                <a class="font-['Space_Grotesk'] text-xl font-bold tracking-tight text-slate-900 hover:text-primary transition-colors" href="../Solutions">Solutions</a>
+                <a class="font-['Space_Grotesk'] text-xl font-bold tracking-tight text-slate-900 hover:text-primary transition-colors" href="../why_us">Why Us</a>
+                <a class="font-['Space_Grotesk'] text-xl font-bold tracking-tight text-slate-900 hover:text-primary transition-colors" href="../Pricing">Pricing</a>
+                
+                <div class="pt-8 mt-auto flex flex-col gap-4">
+                    <button class="w-full font-['Space_Grotesk'] text-lg font-bold text-slate-900 py-3 border border-slate-200 rounded-xl hover:bg-slate-50 transition-colors">Log In</button>
+                    <a href="../contact_us" class="w-full text-center bg-primary text-on-primary py-3 rounded-xl font-['Space_Grotesk'] text-lg font-bold tracking-tight shadow-lg shadow-primary/30">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-20 bg-slate-50">
+
+    <section class="max-w-5xl mx-auto px-6 py-20">
+
+        <div class="mb-12">
+            <h1 class="font-['Space_Grotesk'] text-5xl font-bold tracking-tight text-slate-900">
+                Privacy Policy
+            </h1>
+
+            <p class="mt-4 text-slate-500 font-medium">
+                Last updated: July 8, 2026
+            </p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-10 lg:p-14">
+
+            <p class="text-slate-600 leading-8 mb-10">
+                This Privacy Policy explains how <strong>KRAFT VISION AI</strong> ("KRAFT VISION AI," "we," "our," or "us") collects, uses, and protects your personal information when you use our website and services.
+            </p>
+
+            <!-- Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-slate-900 mb-5">
+                    1. Information We Collect
+                </h2>
+
+                <p class="text-slate-600 leading-8 mb-6">
+                    Depending on how you use our services, we may collect:
+                </p>
+
+                <ul class="list-disc pl-6 space-y-3 text-slate-600 leading-8">
+                    <li>Email address (provided during account registration or login)</li>
+                    <li>Basic profile information, including your profile picture (if you sign in using Google or another supported authentication provider)</li>
+                    <li>Images, videos, text, or other content that you voluntarily upload for AI processing</li>
+                    <li>Usage information, analytics data, and technical diagnostics to improve our services</li>
+                    <li>Device information, browser type, operating system, and IP address collected automatically for security and performance purposes</li>
+                </ul>
+            </section>
+
+            <!-- Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-slate-900 mb-5">
+                    2. How We Use Your Information
+                </h2>
+
+                <p class="text-slate-600 leading-8 mb-6">
+                    We use your information to:
+                </p>
+
+                <ul class="list-disc pl-6 space-y-3 text-slate-600 leading-8">
+                    <li>Provide and improve our AI-powered services</li>
+                    <li>Personalize your account experience</li>
+                    <li>Process requests and generate AI-created content</li>
+                    <li>Improve platform performance and user experience</li>
+                    <li>Monitor service reliability and security</li>
+                    <li>Prevent fraud, abuse, and unauthorized access</li>
+                    <li>Respond to customer support requests</li>
+                </ul>
+            </section>
+
+            <!-- Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-slate-900 mb-5">
+                    3. Cookies and Analytics
+                </h2>
+
+                <div class="space-y-5 text-slate-600 leading-8">
+                    <p>KRAFT VISION AI uses cookies and similar technologies to improve website functionality and understand how visitors use our platform.</p>
+
+                    <p>These technologies may be used for:</p>
+
+                    <ul class="list-disc pl-6 space-y-3">
+                        <li>Website analytics</li>
+                        <li>Performance monitoring</li>
+                        <li>Security and fraud prevention</li>
+                        <li>Improving user experience</li>
+                    </ul>
+
+                    <p>You can manage or disable cookies through your browser settings. Please note that some features of our website may not function properly if cookies are disabled.</p>
+                </div>
+            </section>
+
+            <!-- Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-slate-900 mb-5">
+                    4. Sharing Your Information
+                </h2>
+
+                <div class="space-y-5 text-slate-600 leading-8">
+
+                    <p>We only share information when necessary to operate and improve our services.</p>
+
+                    <p>This may include trusted third-party providers that assist with:</p>
+
+                    <ul class="list-disc pl-6 space-y-3">
+                        <li>Secure authentication</li>
+                        <li>Payment processing</li>
+                        <li>Website hosting and infrastructure</li>
+                        <li>Analytics and performance monitoring</li>
+                        <li>AI-powered content generation</li>
+                        <li>Security and content delivery</li>
+                    </ul>
+
+                    <p>These service providers only receive the information necessary to perform their services and are contractually obligated to protect your data.</p>
+
+                    <p><strong>We never sell your personal information.</strong></p>
+
+                </div>
+            </section>
+
+            <!-- Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-slate-900 mb-5">
+                    5. Uploaded Content and AI Processing
+                </h2>
+
+                <div class="space-y-5 text-slate-600 leading-8">
+
+                    <p>Content you upload-including images, videos, text, and other media-is processed solely for the purpose of providing the requested AI-generated results.</p>
+
+                    <p><strong>KRAFT VISION AI does not permanently store your uploaded content or generated outputs unless specifically requested by the client.</strong></p>
+
+                    <p>For enterprise or custom AI model projects, data may be securely retained only with the client's explicit authorization for the purpose of training or fine-tuning custom AI models based on the client's business requirements.</p>
+
+                    <p>Unless such authorization is provided, uploaded content is processed only to fulfill your request and is not retained or used for AI training.</p>
+
+                    <p><strong>We do not use customer content to train our AI systems without prior written consent.</strong></p>
+
+                </div>
+            </section>
+
+            <!-- Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-slate-900 mb-5">
+                    6. Data Retention
+                </h2>
+
+                <div class="space-y-5 text-slate-600 leading-8">
+
+                    <p>We retain personal account information only for as long as necessary to provide our services or comply with legal obligations.</p>
+
+                    <p>Uploaded files and generated content are not retained after processing unless:</p>
+
+                    <ul class="list-disc pl-6 space-y-3">
+                        <li>You request that we store them.</li>
+                        <li>Your organization requires storage for future access.</li>
+                        <li>Storage is necessary for a custom AI training project that you have explicitly approved.</li>
+                    </ul>
+
+                    <p>You may request deletion of your account and associated personal information at any time.</p>
+
+                </div>
+            </section>
+
+            <!-- Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-slate-900 mb-5">
+                    7. Data Security
+                </h2>
+
+                <div class="space-y-5 text-slate-600 leading-8">
+
+                    <p>We implement industry-standard security practices designed to protect your information, including:</p>
+
+                    <ul class="list-disc pl-6 space-y-3">
+                        <li>Secure HTTPS encryption</li>
+                        <li>Access controls</li>
+                        <li>Secure cloud infrastructure</li>
+                        <li>Continuous monitoring for unauthorized access</li>
+                        <li>Industry best practices for data protection</li>
+                    </ul>
+
+                    <p>Although we take reasonable precautions, no method of electronic transmission or storage is completely secure.</p>
+
+                </div>
+            </section>
+
+            <!-- Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-slate-900 mb-5">
+                    8. Your Rights
+                </h2>
+
+                <p class="text-slate-600 leading-8 mb-5">
+                    Depending on your location and applicable privacy laws, you may have the right to:
+                </p>
+
+                <ul class="list-disc pl-6 space-y-3 text-slate-600 leading-8">
+                    <li>Access your personal information</li>
+                    <li>Correct inaccurate information</li>
+                    <li>Request deletion of your personal information</li>
+                    <li>Request a copy of your data</li>
+                    <li>Withdraw previously granted consent where applicable</li>
+                </ul>
+
+                <p class="text-slate-600 leading-8 mt-6">
+                    To exercise any of these rights, please contact us at
+                    <strong>contact@kraftvisionai.com</strong>.
+                </p>
+
+            </section>
+
+            <!-- Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-slate-900 mb-5">
+                    9. Children's Privacy
+                </h2>
+
+                <div class="space-y-5 text-slate-600 leading-8">
+                    <p>Our services are not intended for children under 18 years of age, and we do not knowingly collect personal information from children under 18.</p>
+
+                    <p>If we become aware that such information has been collected, we will promptly delete it.</p>
+                </div>
+            </section>
+
+            <!-- Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-slate-900 mb-5">
+                    10. Changes to This Privacy Policy
+                </h2>
+
+                <div class="space-y-5 text-slate-600 leading-8">
+
+                    <p>We may update this Privacy Policy from time to time to reflect changes in our services, legal requirements, or business practices.</p>
+
+                    <p>When we make updates, we will revise the <strong>"Last updated"</strong> date at the top of this page.</p>
+
+                    <p>Your continued use of KRAFT VISION AI after any changes become effective constitutes your acceptance of the revised Privacy Policy.</p>
+
+                </div>
+            </section>
+
+            <!-- Contact -->
+            <section class="border-t border-slate-200 pt-10">
+
+                <h2 class="text-2xl font-bold text-slate-900 mb-5">
+                    Contact Us
+                </h2>
+
+                <p class="text-slate-600 leading-8 mb-4">
+                    If you have any questions about this Privacy Policy or how we handle your information, please contact us:
+                </p>
+
+                <p class="font-semibold text-slate-900 mb-3">
+                    KRAFT VISION AI
+                </p>
+
+                <a href="mailto:contact@kraftvisionai.com"
+                   class="text-indigo-600 hover:text-indigo-700 font-semibold text-lg">
+                    contact@kraftvisionai.com
+                </a>
+
+            </section>
+
+        </div>
+
+    </section>
+
+</main>
+
+    <!-- Unified Symmetrical Footer -->
+    <footer class="bg-slate-950 w-full py-16 border-t border-slate-900 mt-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-6 lg:px-12 max-w-7xl mx-auto">
+            <div>
+                <a href="../">
+                    <img src="logo.jpg" alt="KRAFT VISION AI Logo" class="h-12 w-auto mb-4">
+                </a>
+                <p class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-slate-500 max-w-md">
+                    © 2026 KRAFT VISION. Corporate Modernism for the AI Era.
+                </p>
+            </div>
+            <div class="flex flex-wrap gap-8 md:justify-end">
+                <a href="privacy"
+                class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-slate-500 hover:text-indigo-400 hover:underline decoration-indigo-500 decoration-2 underline-offset-4 transition-colors duration-300 ease-in-out">
+                    Privacy
+                </a>
+                <a href="../terms"
+                class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-slate-500 hover:text-indigo-400 hover:underline decoration-indigo-500 decoration-2 underline-offset-4 transition-colors duration-300 ease-in-out">
+                    Terms
+                </a>
+                <a href="../refund"
+                class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-slate-500 hover:text-indigo-400 hover:underline decoration-indigo-500 decoration-2 underline-offset-4 transition-colors duration-300 ease-in-out">
+                    Refund Policy
+                </a>
+                <a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-slate-500 hover:text-indigo-400 hover:underline decoration-indigo-500 decoration-2 underline-offset-4 transition-colors duration-300 ease-in-out" href="../contact_us">Support</a>
+                <a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-slate-500 hover:text-indigo-400 hover:underline decoration-indigo-500 decoration-2 underline-offset-4 transition-colors duration-300 ease-in-out" href="#">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
