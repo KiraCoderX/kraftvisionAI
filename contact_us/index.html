@@ -139,49 +139,150 @@
             
             <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden group">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 transition-transform duration-500 group-hover:scale-110"></div>
-                <form class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="space-y-2">
-                            <label class="font-label-md text-label-md text-on-surface" for="firstName">First Name</label>
-                            <input class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline" id="firstName" placeholder="Diana" type="text"/>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="font-label-md text-label-md text-on-surface" for="lastName">Last Name</label>
-                            <input class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline" id="lastName" placeholder="B." type="text"/>
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <label class="font-label-md text-label-md text-on-surface" for="workEmail">Work Email</label>
-                        <input class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline" id="workEmail" placeholder="diana@company.com" type="email"/>
-                    </div>
-                    <div class="space-y-2">
-                        <label class="font-label-md text-label-md text-on-surface" for="company">Company</label>
-                        <input class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline" id="company" placeholder="Acme Corp" type="text"/>
-                    </div>
-                    <div class="space-y-2">
-                        <label class="font-label-md text-label-md text-on-surface" for="volume">Expected Monthly Volume</label>
-                        <div class="relative">
-                            <select class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all appearance-none" id="volume">
-                                <option disabled="" selected="" value="">Select volume range</option>
-                                <option value="low">Under 1,000 images</option>
-                                <option value="med">1,000 - 10,000 images</option>
-                                <option value="high">10,000 - 100,000 images</option>
-                                <option value="enterprise">100,000+ images (Enterprise)</option>
-                            </select>
-                            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <label class="font-label-md text-label-md text-on-surface" for="needs">Specific AI Needs</label>
-                        <textarea class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline resize-none" id="needs" placeholder="Tell us about your use case, current challenges, and goals..." rows="4"></textarea>
-                    </div>
-                    <button class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-lg hover:brightness-110 transition-all duration-300 shadow-[0_4px_14px_0_rgba(53,0,185,0.39)] hover:shadow-[0_6px_20px_rgba(53,0,185,0.23)]" type="button">
-                        Contact Sales
-                    </button>
-                    <p class="text-center font-body-md text-[12px] text-outline mt-4">
-                        By submitting this form, you agree to our Privacy Policy.
-                    </p>
-                </form>
+                <form class="space-y-6" id="contactForm">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- FORM -->
+        <div class="space-y-2">
+            <label class="font-label-md text-label-md text-on-surface" for="firstName">
+                First Name
+            </label>
+            <input
+                class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline"
+                id="firstName"
+                placeholder="Diana"
+                type="text"
+                required
+            />
+        </div>
+
+        <div class="space-y-2">
+            <label class="font-label-md text-label-md text-on-surface" for="lastName">
+                Last Name
+            </label>
+            <input
+                class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline"
+                id="lastName"
+                placeholder="B."
+                type="text"
+                required
+            />
+        </div>
+    </div>
+
+    <div class="space-y-2">
+        <label class="font-label-md text-label-md text-on-surface" for="workEmail">
+            Work Email
+        </label>
+        <input
+            class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline"
+            id="workEmail"
+            placeholder="diana@company.com"
+            type="email"
+            required
+        />
+    </div>
+
+    <div class="space-y-2">
+        <label class="font-label-md text-label-md text-on-surface" for="company">
+            Company
+        </label>
+        <input
+            class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline"
+            id="company"
+            placeholder="Acme Corp"
+            type="text"
+            required
+        />
+    </div>
+
+    <div class="space-y-2">
+        <label class="font-label-md text-label-md text-on-surface" for="volume">
+            Expected Monthly Volume
+        </label>
+
+        <div class="relative">
+            <select
+                class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all appearance-none"
+                id="volume"
+                required
+            >
+                <option disabled selected value="">Select volume range</option>
+                <option value="Under 1,000 images">Under 1,000 images</option>
+                <option value="1,000 - 10,000 images">1,000 - 10,000 images</option>
+                <option value="10,000 - 100,000 images">10,000 - 100,000 images</option>
+                <option value="100,000+ images (Enterprise)">
+                    100,000+ images (Enterprise)
+                </option>
+            </select>
+
+            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline pointer-events-none">
+                expand_more
+            </span>
+        </div>
+    </div>
+
+    <div class="space-y-2">
+        <label class="font-label-md text-label-md text-on-surface" for="needs">
+            Specific AI Needs
+        </label>
+
+        <textarea
+            class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline resize-none"
+            id="needs"
+            placeholder="Tell us about your use case, current challenges, and goals..."
+            rows="4"
+            required
+        ></textarea>
+    </div>
+
+    <button
+        class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-lg hover:brightness-110 transition-all duration-300 shadow-[0_4px_14px_0_rgba(53,0,185,0.39)] hover:shadow-[0_6px_20px_rgba(53,0,185,0.23)]"
+        type="submit"
+    >
+        Contact Sales
+    </button>
+
+    <p class="text-center font-body-md text-[12px] text-outline mt-4">
+        By submitting this form, you agree to our Privacy Policy.
+    </p>
+</form>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const firstName = document.getElementById("firstName").value;
+    const lastName = document.getElementById("lastName").value;
+    const workEmail = document.getElementById("workEmail").value;
+    const company = document.getElementById("company").value;
+    const volume = document.getElementById("volume").value;
+    const needs = document.getElementById("needs").value;
+
+    const subject = encodeURIComponent(
+        "New Sales Query - " + firstName + " " + lastName
+    );
+
+    const body = encodeURIComponent(
+`New query received from KRAFT VISION website
+
+First Name: ${firstName}
+Last Name: ${lastName}
+Work Email: ${workEmail}
+Company: ${company}
+Expected Monthly Volume: ${volume}
+
+Specific AI Needs:
+${needs}
+
+--------------------------------
+Submitted through KRAFT VISION Contact Form`
+    );
+
+    window.location.href =
+        `mailto:contact@kraftvisionai.com?subject=${subject}&body=${body}`;
+});
+</script>
             </div>
         </div>
     </main>
